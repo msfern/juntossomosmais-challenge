@@ -1,0 +1,10 @@
+.wrapper {
+  display: grid;
+  grid-template-areas: 
+    "sidebar users"
+    "sidebar users"
+    "sidebar pagination";
+  margin-top: 30px;
+  grid-template-columns: 300px auto;
+  padding: 0 20px;
+}

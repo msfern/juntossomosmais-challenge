@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Switch, Route }  from 'react-router-dom';
 import Header from './components/Header/index';
-import FilterSideBar from './components/FilterSideBar/index';
-import UserCards from './components/UserCards/index';
-import Pagination from './components/Pagination/index';
+import Main from './components/Main/index';
+import UserDetails from './components/UserDetails/index';
 import Footer from './components/Footer/index';
 import './App.css';
 
@@ -27,23 +27,21 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const fetchUsers = await axios.get('./input-frontend-apps.json');
+      const fetchUsers = await axios.get('/input-frontend-apps.json');
       setLoading(true);
       setUsers(fetchUsers.data.results);
       setFilteredUsers(fetchUsers.data.results);
       setLoading(false);
     })()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className="App">
       <Header updateSearch={updateSearch} />
-      <main className='wrapper'>
-        <FilterSideBar />
-        <UserCards filteredUsers={filteredUsers} />
-        <Pagination />
-      </main>
+      <Switch>
+        <Route exact path='/' render={() => <Main filteredUsers={filteredUsers} />} />
+        <Route path="/users/:id" component={UserDetails}/>
+      </Switch>
       <Footer />
     </div>
   );
