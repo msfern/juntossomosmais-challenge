@@ -13,6 +13,16 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(10);
+  useEffect(() => {
+    (async () => {
+      const fetchUsers = await axios.get('./input-frontend-apps.json');
+      setLoading(true);
+      setUsers(fetchUsers.data.results);
+      setFilteredUsers(fetchUsers.data.results);
+      setLoading(false);
+    })()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
