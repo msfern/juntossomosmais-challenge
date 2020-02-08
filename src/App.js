@@ -13,6 +13,18 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(10);
+
+  function updateSearch(text) {
+    const searchResult =  users.filter((user) => {
+      const fullName = `${user.name.first} ${user.name.last}`;
+      return fullName.toLowerCase().includes(text.toLowerCase());
+    })
+    if(text === '') {
+      setFilteredUsers(users);;
+    }
+    setFilteredUsers(searchResult);
+  }
+
   useEffect(() => {
     (async () => {
       const fetchUsers = await axios.get('./input-frontend-apps.json');
@@ -23,22 +35,16 @@ function App() {
     })()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header updateSearch={updateSearch} />
+      <main className='wrapper'>
+        <FilterSideBar />
+        <UserCards filteredUsers={filteredUsers} />
+        <Pagination />
+      </main>
+      <Footer />
     </div>
   );
 }
