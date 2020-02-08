@@ -1,0 +1,7 @@
+.user-list {
+  grid-area: users;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 30px;
+}
