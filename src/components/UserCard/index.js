@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
-export default function UserCard({ details }) {
-  function formatInfo(info) {
+export default function UserCard({ index, details }) {
+  function formatUserInfo(info) {
     return info.split(' ').map(word => (
       word.charAt(0).toUpperCase() + word.slice(1)
     )).join(' ');
@@ -15,12 +16,12 @@ export default function UserCard({ details }) {
       </div>
       <div className='user-card__body'>
         <div className='middle'>
-          <p className='name-age'>{formatInfo(details.name.first)} {formatInfo(details.name.last)}, {details.dob.age}</p>
+          <p className='name-age'>{formatUserInfo(details.name.first)} {formatUserInfo(details.name.last)}, {details.dob.age}</p>
           <p className='email'>{details.email}</p>
         </div>
         <div className='bottom'>
-          <p className='location'>{formatInfo(details.location.city)}, {formatInfo(details.location.state)}</p>
-          <button className='see-more'>Ver Mais</button>
+          <p className='location'>{formatUserInfo(details.location.city)}, {formatUserInfo(details.location.state)}</p>
+          <Link to={{pathname: `/users/${index}`, state: {details}}}>Ver mais</Link>
         </div>
       </div>
     </div>

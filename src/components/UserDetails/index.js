@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const UserDetails = () => {
+const UserDetails = ({ details }) => {
   return (
-    <div>
+    <div className='user-details'>
+      
+      <Link to={{pathname: `/`}}>Voltar</Link>
     </div>
   )
 }
