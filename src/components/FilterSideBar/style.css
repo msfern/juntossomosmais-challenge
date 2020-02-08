@@ -1,0 +1,13 @@
+.filter-sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-sidebar .title {
+  font-weight: 600;
+}
+
+.filter-sidebar label {
+  margin: 5px 0;
+}
