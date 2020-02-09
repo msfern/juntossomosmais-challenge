@@ -10,9 +10,10 @@ import './App.css';
 function App() {
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(10);
+  const [radioIsBeingUsed, setRadioIsBeingUsed] = useState(false);
+  // const [loading, setLoading] = useState(false);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [postsPerPage, setPostsPerPage] = useState(10);
 
   function updateSearch(text) {
     const searchResult =  users.filter((user) => {
@@ -20,26 +21,57 @@ function App() {
       return fullName.toLowerCase().includes(text.toLowerCase());
     })
     if(text === '') {
-      setFilteredUsers(users);;
+      setFilteredUsers(users);
     }
     setFilteredUsers(searchResult);
+  }
+
+  function filterUsers(radio) {
+    setRadioIsBeingUsed(true);
+    const radioNumber = parseInt(radio);
+    const userList = [...users];
+    const usersFromRegion = userList.filter(user => user.region === radioNumber);
+    setFilteredUsers(usersFromRegion);
+  }
+
+  function clearFilter() {
+    setRadioIsBeingUsed(false);
+    setFilteredUsers(users);
+  }
+
+  function addRegionPropertyToUser(user) {
+    const latitude = user.location.coordinates.latitude;
+    const longitude = user.location.coordinates.longitude;
+
+    if(((latitude >= -46.361899 && latitude <= -34.276938) && (longitude >= -15.411580 && longitude <= -2.196998))
+      || ((latitude >= -52.997614 && latitude <= -44.428305) && (longitude >= -23.966413 && longitude <= -19.766959))) {
+      user['region'] = 0;
+    } else if(((latitude >= -54.777426 && latitude <= -46.603598)) && ((longitude >= -34.016466 && longitude <= -26.155681))) {
+      user['region'] = 1;
+    } else {
+      user['region'] = 2;
+    }
+
+    return user;
   }
 
   useEffect(() => {
     (async () => {
       const fetchUsers = await axios.get('/input-frontend-apps.json');
-      setLoading(true);
-      setUsers(fetchUsers.data.results);
-      setFilteredUsers(fetchUsers.data.results);
-      setLoading(false);
+      const fetchResponse = fetchUsers.data.results;
+      // setLoading(true);
+      const usersWithRegionProperty = Object.keys(fetchResponse).map(user => addRegionPropertyToUser(fetchResponse[user]));
+      setUsers(usersWithRegionProperty);
+      setFilteredUsers(usersWithRegionProperty);
+      // setLoading(false);
     })()
   }, []);
 
   return (
     <div className="App">
-      <Header updateSearch={updateSearch} />
+      <Header updateSearch={updateSearch} radioIsBeingUsed={radioIsBeingUsed} />
       <Switch>
-        <Route exact path='/' render={() => <Main filteredUsers={filteredUsers} />} />
+        <Route exact path='/' render={() => <Main filteredUsers={filteredUsers} filterUsers={filterUsers} clearFilter={clearFilter} />} />
         <Route path="/users/:id" component={UserDetails}/>
       </Switch>
       <Footer />
