@@ -1,5 +1,6 @@
 .user-details {
   border: 1px solid #ccc;
+  background-color: #e4e4e4;
   max-width: 720px;
   margin: 30px auto 0;
   display: flex;

@@ -16,7 +16,7 @@ export default function UserCard({ index, details }) {
         </div>
         <div className='bottom'>
           <p className='location'>{formatString(details.location.city)}, {formatString(details.location.state)}</p>
-          <Link className='go-to-details' to={{pathname: `/users/${index}`, state: {details}}}>Ver mais</Link>
+          <Link className='go-to-details' to={{pathname: `/users/${index}`, state: {details}}}>Ver detalhes</Link>
         </div>
       </div>
     </div>

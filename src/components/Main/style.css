@@ -4,7 +4,7 @@
     "sidebar users"
     "sidebar users"
     "sidebar pagination";
-  margin-top: 30px;
+  margin: 40px 0;
   grid-template-columns: 300px auto;
-  padding: 0 20px;
+  padding: 0 30px;
 }
