@@ -3,10 +3,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 20px 40px;
-  background-color: #ccc;
-  border-bottom-left-radius: 30%;
-  border-bottom-right-radius: 30%;
-  box-shadow: 1px 3px 6px 1px rgba(0,0,0,.3);
+  background-color: #e4e4e4;
+  border-bottom-left-radius: 8%;
+  border-bottom-right-radius: 8%;
+  box-shadow: 1px 3px 6px 1px rgba(0,0,0,.2);
 }
 
 .header img {
