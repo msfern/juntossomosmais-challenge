@@ -48,10 +48,11 @@
   margin-bottom: 10px;
 }
 
-.user-details-column .input-group .input-block label {
+.user-details-column .input-block label {
   font-size: 14px;
   font-weight: bold;
   display: inline-block;
+  margin-bottom: 3px;
 }
 
 .user-details-column .input-block input {
@@ -66,7 +67,7 @@
 }
 
 .user-details-column .input-group .input-block.input-block--small input {
-  width: 5ch;
+  width: 7ch;
 }
 
 .user-details-column .input-group .input-block.input-block--midsize input {
