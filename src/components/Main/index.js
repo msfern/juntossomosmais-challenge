@@ -4,12 +4,12 @@ import UserCards from '../UserCards/index';
 import Pagination from '../Pagination/index';
 import './style.css';
 
-function Main({ filteredUsers, filterUsers, clearFilter }) {
+function Main({ currentUsers, filterUsers, clearFilter, loading, pageNumbers, changePage }) {
   return (
     <div className='wrapper'>
       <FilterSideBar filterUsers={filterUsers} clearFilter={clearFilter} />
-      <UserCards filteredUsers={filteredUsers} />
-      <Pagination />
+      <UserCards currentUsers={currentUsers} loading={loading} />
+      <Pagination pageNumbers={pageNumbers} changePage={changePage} />
     </div>
   )
 }

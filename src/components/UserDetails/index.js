@@ -87,10 +87,6 @@ const UserDetails = (props) => {
             <input id='postcode' type='text' defaultValue={details.location.postcode} readOnly />
           </div>
         </div>
-
-        <div className='input-group'>
-          <div className='user-location'>Mapa</div>
-        </div>
         <div className='user-details-footer'>
           <Link className='return' to={{pathname: `/`}}>Voltar</Link>
         </div>

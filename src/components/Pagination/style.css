@@ -1,3 +1,31 @@
 .pagination {
   grid-area: pagination;
 }
+
+.page-list {
+  list-style: none;
+  margin: 40px 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.page-item button {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--red);
+  font-weight: 600;
+  border: 1px solid var(--red);
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.page-item button.active {
+  color: white;
+  background-color: var(--red);
+}
+
+.page-item:not(:first-child) {
+  margin-left: 10px;
+}

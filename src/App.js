@@ -11,32 +11,46 @@ function App() {
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [radioIsBeingUsed, setRadioIsBeingUsed] = useState(false);
-  // const [loading, setLoading] = useState(false);
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [postsPerPage, setPostsPerPage] = useState(10);
+  const [loading, setLoading] = useState(false);
+  const [currentUsers, setCurrentUsers] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [usersPerPage] = useState(15);
+  const [pageNumbers, setPageNumbers] = useState([]);
 
-  function updateSearch(text) {
-    const searchResult =  users.filter((user) => {
-      const fullName = `${user.name.first} ${user.name.last}`;
-      return fullName.toLowerCase().includes(text.toLowerCase());
-    })
-    if(text === '') {
-      setFilteredUsers(users);
+  useEffect(() => {
+    const fetchAllUsers = async () => {
+      setLoading(true);
+      const fetchUsers = await axios.get('/input-frontend-apps.json');
+      const fetchResponse = fetchUsers.data.results;
+      const usersWithRegionProperty = Object.keys(fetchResponse).map(user => addRegionPropertyToUser(fetchResponse[user]));
+      setUsers(usersWithRegionProperty);
+      setFilteredUsers(usersWithRegionProperty);
+      setLoading(false);
     }
-    setFilteredUsers(searchResult);
-  }
+    fetchAllUsers();
+  }, []);
 
-  function filterUsers(radio) {
-    setRadioIsBeingUsed(true);
-    const radioNumber = parseInt(radio);
-    const userList = [...users];
-    const usersFromRegion = userList.filter(user => user.region === radioNumber);
-    setFilteredUsers(usersFromRegion);
-  }
+  useEffect(() => {
+    const indexOfLastUser = currentPage * usersPerPage;
+    const indexOfFirstUser = indexOfLastUser - usersPerPage;
+    const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
+    setCurrentUsers(currentUsers);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[filteredUsers, currentPage]);
 
-  function clearFilter() {
-    setRadioIsBeingUsed(false);
-    setFilteredUsers(users);
+  useEffect(() => {
+    let numbers = [];
+    const calculatePageNumber = () => {
+      for(let i = 1; i <= Math.ceil(filteredUsers.length / usersPerPage); i++) {
+        numbers.push(i);
+      }
+      setPageNumbers(numbers);
+    }
+    calculatePageNumber();
+  }, [filteredUsers, usersPerPage]);
+
+  function changePage(event,page) {
+    setCurrentPage(page);
   }
 
   function addRegionPropertyToUser(user) {
@@ -55,23 +69,36 @@ function App() {
     return user;
   }
 
-  useEffect(() => {
-    (async () => {
-      const fetchUsers = await axios.get('/input-frontend-apps.json');
-      const fetchResponse = fetchUsers.data.results;
-      // setLoading(true);
-      const usersWithRegionProperty = Object.keys(fetchResponse).map(user => addRegionPropertyToUser(fetchResponse[user]));
-      setUsers(usersWithRegionProperty);
-      setFilteredUsers(usersWithRegionProperty);
-      // setLoading(false);
-    })()
-  }, []);
+  function updateSearch(text) {
+    const searchResult =  users.filter((user) => {
+      const fullName = `${user.name.first} ${user.name.last}`;
+      return fullName.toLowerCase().includes(text.toLowerCase());
+    })
+    if(text === '') {
+      setFilteredUsers(users);
+    }
+    setFilteredUsers(searchResult);
+    setCurrentPage(1);
+  }
+
+  function filterUsers(radio) {
+    setRadioIsBeingUsed(true);
+    const radioNumber = parseInt(radio);
+    const userList = [...users];
+    const usersFromRegion = userList.filter(user => user.region === radioNumber);
+    setFilteredUsers(usersFromRegion);
+  }
+
+  function clearFilter() {
+    setRadioIsBeingUsed(false);
+    setFilteredUsers(users);
+  }
 
   return (
     <div className="App">
       <Header updateSearch={updateSearch} radioIsBeingUsed={radioIsBeingUsed} />
       <Switch>
-        <Route exact path='/' render={() => <Main filteredUsers={filteredUsers} filterUsers={filterUsers} clearFilter={clearFilter} />} />
+        <Route exact path='/' render={() => <Main filteredUsers={filteredUsers} currentUsers={currentUsers} filterUsers={filterUsers} clearFilter={clearFilter} loading={loading} pageNumbers={pageNumbers} changePage={changePage} />} />
         <Route path="/users/:id" component={UserDetails}/>
       </Switch>
       <Footer />
