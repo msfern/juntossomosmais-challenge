@@ -19,6 +19,12 @@
   height: 25px;
   border-radius: 4px;
   cursor: pointer;
+  transform: translateY(0);
+  transition: transform .2s linear;
+}
+
+.page-item button:hover {
+  transform: translateY(-3px);
 }
 
 .page-item button.active {
