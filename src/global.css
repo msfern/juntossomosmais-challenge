@@ -5,9 +5,12 @@
   --header: #878C8F;
   --background: #FCF7FF;
   --textColorDark: #0A090C;
+  --yellow: #F9C80E;
   --red: #FF5964;
+  --darkRed: #e63743;
   --blue: #38618C;
   --gray: #666;
+  --darkGray: #4e4e4e;
   --lightGray: #ccc;
 }
 
@@ -30,4 +33,8 @@ body {
 
 a {
   color: var(--textColorDark);
+}
+
+::selection {
+  background-color: var(--yellow);
 }
