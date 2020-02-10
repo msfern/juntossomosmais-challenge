@@ -50,18 +50,43 @@ function App() {
     calculatePageNumber();
   }, [filteredUsers, usersPerPage]);
 
-  function changePage(event,page) {
+  function changePage(page) {
     setCurrentPage(page);
   }
 
   function addRegionPropertyToUser(user) {
     const latitude = user.location.coordinates.latitude;
     const longitude = user.location.coordinates.longitude;
+    const special = {
+      minLat: {
+        lat1: -46.361899,
+        lat2: -52.997614
+      },
+      maxLat: {
+        lat1: -34.276938,
+        lat2: -44.428305
+      },
+      minLon: {
+        lon1: -15.411580,
+        lon2: -23.966413
+      },
+      maxLon: {
+        lon1: -2.196998,
+        lon2: -19.766959
+      }
+    }
 
-    if(((latitude >= -46.361899 && latitude <= -34.276938) && (longitude >= -15.411580 && longitude <= -2.196998))
-      || ((latitude >= -52.997614 && latitude <= -44.428305) && (longitude >= -23.966413 && longitude <= -19.766959))) {
+    const normal = {
+      minLat: -54.777426,
+      maxLat: -46.603598,
+      minLon: -34.016466,
+      maxLon: -26.155681
+    }
+
+    if(((latitude >= special.minLat.lat1 && latitude <= special.maxLat.lat1 ) && (longitude >= special.minLon.lon1  && longitude <= special.maxLon.lon1))
+      || ((latitude >= special.minLat.lat2 && latitude <= special.maxLat.lat2 ) && (longitude >=special.minLon.lon2 && longitude <= special.maxLon.lon2))) {
       user['region'] = 0;
-    } else if(((latitude >= -54.777426 && latitude <= -46.603598)) && ((longitude >= -34.016466 && longitude <= -26.155681))) {
+    } else if(((latitude >= normal.minLat && latitude <= normal.maxLat)) && ((longitude >= normal.minLon && longitude <= normal.maxLon))) {
       user['region'] = 1;
     } else {
       user['region'] = 2;
