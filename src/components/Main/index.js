@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import FilterSideBar from '../FilterSideBar/index';
 import UserCards from '../UserCards/index';
 import Pagination from '../Pagination/index';
@@ -12,6 +13,15 @@ function Main({ currentUsers, filterUsers, clearFilter, loading, pageNumbers, ch
       <Pagination pageNumbers={pageNumbers} changePage={changePage} currentPage={currentPage} />
     </div>
   )
+}
+
+Main.propTypes ={
+  currentUsers: PropTypes.array,
+  filterUsers: PropTypes.func,
+  clearFilter: PropTypes.func,
+  loading: PropTypes.bool,
+  pageNumbers: PropTypes.array,
+  currentPage: PropTypes.number,
 }
 
 export default Main

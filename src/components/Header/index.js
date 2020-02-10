@@ -1,10 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import SearchBar from '../SearchBar/index';
 import ThemeSwitch from '../ThemeSwitch/index';
 import './style.css';
 
-const Header = ({ updateSearch, radioIsBeingUsed, history }) => {
+function Header({ updateSearch, radioIsBeingUsed, history }) {
+  
   const goToHomePage = (event) => {
     event.preventDefault();
     history.push(`/`);
@@ -16,6 +18,12 @@ const Header = ({ updateSearch, radioIsBeingUsed, history }) => {
       <ThemeSwitch />
     </header>
   )
+}
+
+Header.propTypes ={
+  updateSearch: PropTypes.func,
+  radioIsBeingUsed: PropTypes.bool,
+  history: PropTypes.object,
 }
 
 export default withRouter(Header)

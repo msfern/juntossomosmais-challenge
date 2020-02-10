@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { formatString, getOnlyDayMonthYearFromDate } from '../../utils/utils';
 import './style.css';
@@ -93,6 +94,39 @@ const UserDetails = (props) => {
       </div>
     </div>
   )
+}
+
+UserDetails.propTypes ={
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      details: PropTypes.shape({
+        name: PropTypes.shape({
+          title: PropTypes.string,
+          first: PropTypes.string,
+          last: PropTypes.string
+        }),
+        picture: PropTypes.shape({
+          large: PropTypes.string
+        }),
+        registered: PropTypes.shape({
+          date: PropTypes.string
+        }),
+        dob: PropTypes.shape({
+          age: PropTypes.number,
+          date: PropTypes.string
+        }),
+        location: PropTypes.shape({
+          street: PropTypes.string,
+          city: PropTypes.string,
+          state: PropTypes.string,
+          postcode: PropTypes.number
+        }),
+      })
+    }),
+  }),
+  email: PropTypes.string,
+  phone: PropTypes.string,
+  cell: PropTypes.string,
 }
 
 export default UserDetails

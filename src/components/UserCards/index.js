@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 import UserCard from '../UserCard/index'
 import './style.css';
 
@@ -17,6 +18,11 @@ const UserCards = ({ currentUsers, loading }) => {
       }
     </div>
   )
+}
+
+UserCards.propTypes ={
+  currentUsers: PropTypes.array,
+  loading: PropTypes.bool,
 }
 
 export default UserCards;

@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import './style.css';
 
 const SearchBar = ({ updateSearch, radioIsBeingUsed }) => {
@@ -16,6 +17,11 @@ const SearchBar = ({ updateSearch, radioIsBeingUsed }) => {
       <i className="fas fa-search"></i>
     </div>
   )
+}
+
+SearchBar.propTypes = {
+  updateSearch: PropTypes.func,
+  radioIsBeingUsed: PropTypes.bool
 }
 
 export default SearchBar

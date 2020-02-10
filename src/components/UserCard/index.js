@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { formatString } from '../../utils/utils';
 import './style.css';
 
-export default function UserCard({ index, details }) {
+const UserCard = ({ index, details }) => {
   return (
     <div className='user-card'>
       <div className='user-card__header'>
@@ -22,3 +23,25 @@ export default function UserCard({ index, details }) {
     </div>
   )
 }
+
+UserCard.propTypes ={
+  index: PropTypes.string,
+  details: PropTypes.shape({
+    name: PropTypes.shape({
+      first: PropTypes.string,
+      last: PropTypes.string
+    }),
+    picture: PropTypes.shape({
+      large: PropTypes.string
+    }),
+    dob: PropTypes.shape({
+      age: PropTypes.number,
+    }),
+    location: PropTypes.shape({
+      city: PropTypes.string,
+      state: PropTypes.string,
+    }),
+  })
+}
+
+export default UserCard;

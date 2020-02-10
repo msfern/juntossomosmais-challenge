@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './style.css';
 
 const FilterSideBar = ({ filterUsers, clearFilter }) => {
@@ -32,6 +33,11 @@ const FilterSideBar = ({ filterUsers, clearFilter }) => {
       <button className='clear' onClick={handleClearButtonClick}>Limpar filtro</button>
     </aside>
   )
+}
+
+FilterSideBar.propTypes ={
+  filterUsers: PropTypes.func,
+  clearFilter: PropTypes.func,
 }
 
 export default FilterSideBar
