@@ -121,7 +121,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className='App' >
       <Header updateSearch={updateSearch} radioIsBeingUsed={radioIsBeingUsed} />
       <Switch>
         <Route exact path='/' render={() => <Main filteredUsers={filteredUsers} currentUsers={currentUsers} filterUsers={filterUsers} clearFilter={clearFilter} loading={loading} pageNumbers={pageNumbers} changePage={changePage} currentPage={currentPage} />} />

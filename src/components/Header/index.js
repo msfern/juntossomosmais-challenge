@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import SearchBar from '../SearchBar/index';
-import ThemeSwitch from '../ThemeSwitch/index';
 import './style.css';
 
 function Header({ updateSearch, radioIsBeingUsed, history }) {
@@ -15,7 +14,6 @@ function Header({ updateSearch, radioIsBeingUsed, history }) {
     <header className='header'>
       <img src='/logo.svg' alt='Logo' onClick={goToHomePage} />
       <SearchBar updateSearch={updateSearch} radioIsBeingUsed={radioIsBeingUsed} />
-      <ThemeSwitch />
     </header>
   )
 }
