@@ -8,9 +8,13 @@ const UserCards = ({ currentUsers, loading }) => {
   }
   return (
     <div className='user-list'>
-      { Object.keys(currentUsers).map(user => (
-        <UserCard key={user} index={user} details={currentUsers[user]} />
-      ))}
+      {currentUsers.length ?
+        Object.keys(currentUsers).map(user => (
+          <UserCard key={user} index={user} details={currentUsers[user]} />
+        ))
+        :
+        <p>Nenhum usuário corresponde à essa busca.</p>
+      }
     </div>
   )
 }
