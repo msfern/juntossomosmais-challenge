@@ -14,3 +14,12 @@
   width: 150px;
   height: auto;
 }
+
+@media screen and (max-width: 775px) {
+  .header {
+    flex-direction: column;
+  }
+  .header img {
+    margin-bottom: 20px;
+  }
+}

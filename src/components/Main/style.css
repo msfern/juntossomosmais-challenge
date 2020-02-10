@@ -10,3 +10,14 @@
   background-color: var(--background);
   justify-content: center;
 }
+
+@media screen and (max-width: 775px) {
+  .wrapper {
+    grid-template-areas: 
+    "sidebar"
+    "users"
+    "pagination";
+    grid-template-columns: minmax(260px, 1fr);
+    padding: 20px;
+  }
+}
