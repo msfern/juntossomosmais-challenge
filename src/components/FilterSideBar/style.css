@@ -12,13 +12,14 @@
 
 .filter-sidebar label {
   margin: 7px 0;
-  font-size: 1rem;
+  font-size: .9rem;
 }
 
 .filter-sidebar .clear {
-  border: 1px solid #197aa5;
+  font-family: 'Open Sans', sans-serif;
+  border: 1px solid var(--red);
   border-radius: 4px;
-  background-color: #197aa5;
+  background-color: var(--red);
   color: white;
   font-weight: 600;
   text-decoration: none;

@@ -1,6 +1,5 @@
 .user-details {
-  border: 1px solid #ccc;
-  background-color: #e4e4e4;
+  border: 1px solid var(--lightGray);
   max-width: 720px;
   margin: 30px auto 0;
   display: flex;
@@ -58,13 +57,13 @@
 
 .user-details-column .input-block input {
   display: block;
-  color: #666;
+  color: var(--gray);
   box-shadow: none;
   width: 100%;
   border-radius: 4px;
   padding: 5px;
   background-color: white;
-  border: 1px solid #ccc;
+  border: 1px solid var(--lightGray);
 }
 
 .user-details-column .input-group .input-block.input-block--small input {
@@ -78,12 +77,13 @@
 .user-details-footer {
   display: flex;
   justify-content: flex-end;
+  margin-top: 20px;
 }
 
 .user-details-footer .return {
-  border: 1px solid #666;
+  border: 1px solid var(--gray);
   border-radius: 4px;
-  background-color: #666;
+  background-color: var(--gray);
   color: white;
   font-weight: 500;
   text-decoration: none;

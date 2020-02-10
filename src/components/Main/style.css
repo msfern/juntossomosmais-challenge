@@ -4,7 +4,9 @@
     "sidebar users"
     "sidebar users"
     "sidebar pagination";
-  margin: 40px 0;
-  grid-template-columns: 300px auto;
-  padding: 0 30px;
+  padding: 40px;
+  grid-template-columns: 300px minmax(300px, 800px);
+  width: 100%;
+  background-color: var(--background);
+  justify-content: center;
 }

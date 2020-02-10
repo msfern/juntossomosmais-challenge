@@ -1,9 +1,10 @@
 .user-card {
-  height: 315px;
+  height: 330px;
   box-shadow: -1px 1px 8px 3px rgba(0,0,0,.2);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+  background-color: white;
 }
 
 .user-card img {
@@ -12,7 +13,7 @@
 }
 
 .user-card__header {
-  background-color: #755c5a;
+  background-color: var(--blue);
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 15%;
@@ -22,7 +23,7 @@
 }
 
 .user-card__body {
-  padding: 10px;
+  padding: 15px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -36,7 +37,7 @@
 .user-card__body .middle .name-age {
   margin: 0;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin: 0 0 5px;
 }
 
@@ -53,17 +54,18 @@
 }
 
 .user-card__body .bottom .location {
-  margin: 0 0 10px 0;
+  margin: 0 0 15px 0;
   font-size: .9rem;
 }
 
 .user-card__body .bottom .go-to-details {
-  border: 1px solid #197aa5;
+  border: 1px solid var(--red);
   border-radius: 4px;
-  background-color: #197aa5;
+  background-color: var(--red);
   color: white;
   font-weight: 600;
   text-decoration: none;
   padding: 5px 15px;
   width: 130px;
+  font-size: .9rem;
 }

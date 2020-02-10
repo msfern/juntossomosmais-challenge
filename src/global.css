@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css');
 
 :root {
-  --textColorDark: #343434;
+  --header: #878C8F;
+  --background: #FCF7FF;
+  --textColorDark: #0A090C;
+  --red: #FF5964;
+  --blue: #38618C;
+  --gray: #666;
+  --lightGray: #ccc;
 }
 
 * {
