@@ -5,6 +5,7 @@ import Header from './components/Header/index';
 import Main from './components/Main/index';
 import UserDetails from './components/UserDetails/index';
 import Footer from './components/Footer/index';
+import NotFound from './components/NotFound/index';
 import './App.css';
 
 function App() {
@@ -100,6 +101,8 @@ function App() {
       <Switch>
         <Route exact path='/' render={() => <Main filteredUsers={filteredUsers} currentUsers={currentUsers} filterUsers={filterUsers} clearFilter={clearFilter} loading={loading} pageNumbers={pageNumbers} changePage={changePage} currentPage={currentPage} />} />
         <Route path="/users/:id" component={UserDetails}/>
+        <Route path="/users/:id" component={UserDetails}/>
+        <Route component={NotFound} />
       </Switch>
       <Footer />
     </div>
