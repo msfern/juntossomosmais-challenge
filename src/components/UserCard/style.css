@@ -68,4 +68,10 @@
   padding: 5px 15px;
   width: 130px;
   font-size: .9rem;
+  transition: background-color .2s ease-in;
+}
+
+.user-card__body .bottom .go-to-details:hover {
+  border: 1px solid var(--darkRed);
+  background-color: var(--darkRed);
 }

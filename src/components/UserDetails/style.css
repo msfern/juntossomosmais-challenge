@@ -6,6 +6,7 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: -1px 1px 6px 0 rgba(0,0,0,.3);
+  background-color: white;
 }
 
 .user-details-column {
@@ -62,7 +63,7 @@
   width: 100%;
   border-radius: 4px;
   padding: 5px;
-  background-color: white;
+  background-color: #efefef;
   border: 1px solid var(--lightGray);
 }
 
@@ -81,6 +82,7 @@
 }
 
 .user-details-footer .return {
+  font-family: 'Open Sans', sans-serif;
   border: 1px solid var(--gray);
   border-radius: 4px;
   background-color: var(--gray);
@@ -88,4 +90,10 @@
   font-weight: 500;
   text-decoration: none;
   padding: 5px 15px;
+  transition: background-color .2s ease-in;
+}
+
+.user-details-footer .return:hover {
+  border: 1px solid var(--darkGray);
+  background-color: var(--darkGray);
 }
