@@ -41,7 +41,9 @@ As for the pagination, I coded it from scratch since it wouldn't be very complic
 
 Finally, PropTypes were added to the projects, with the goal to type check all the props used in the application.
 
-A dark mode switch was also added for aesthethic purposes.
+A dark mode switch was also added for aesthethic purposes. Its switch was created using the React Switch lib.
+
+As for the tests, I don't have any hands on experience with it, so I read some articles and watched a few online courses and created some just so I wouldn't leave the project with zero testing. But I'm definitely interested in improving this skill.
 
 
 ## 🎨 Palette
