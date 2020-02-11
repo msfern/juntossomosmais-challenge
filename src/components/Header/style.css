@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 20px 40px;
+  padding: 30px 20px;
   background-color: var(--header);
   border-bottom-left-radius: 8%;
   border-bottom-right-radius: 8%;
