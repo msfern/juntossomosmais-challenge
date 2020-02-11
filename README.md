@@ -35,7 +35,7 @@ Afterwards, the search functionality was created, matching the search value with
 
 Since every user's details had to be on an internal page, I used React Router to create this, switching between the **main page**, the **details page** and a **Not Found page** according to the URL path.
 
-For the sidebar filter, besides filtering, a Clear option was added in case the user wanted to see every other user (which wouldn't be the case since every user being displayed had the Trabalhoso region flag).
+For the sidebar filter, besides filtering, a Clear option was added in case the user wanted to see every other user.
 
 As for the pagination, I coded it from scratch since it wouldn't be very complicated to do so.
 
@@ -83,3 +83,8 @@ $ yarn
 $ npm start 
 $ or
 $ yarn start
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

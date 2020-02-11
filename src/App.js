@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     const fetchAllUsers = async () => {
       setLoading(true);
-      const fetchUsers = await axios.get('/input-frontend-apps.json');
+      const fetchUsers = await axios.get('/frontend-challenge.json');
       const fetchResponse = fetchUsers.data.results;
       const usersWithRegionProperty = Object.keys(fetchResponse).map(user => addRegionPropertyToUser(fetchResponse[user]));
       setUsers(usersWithRegionProperty);
