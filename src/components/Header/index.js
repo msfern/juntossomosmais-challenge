@@ -6,11 +6,11 @@ import './style.css';
 import ThemeSwitcher from '../ThemeSwitcher';
 
 function Header({ updateSearch, radioIsBeingUsed, history, darkMode, setDarkMode }) {
-  
   const goToHomePage = (event) => {
     event.preventDefault();
     history.push(`/`);
   }
+
   return (
     <header className='header'>
       <img src='/logo.svg' alt='Logo' onClick={goToHomePage} />

@@ -43,7 +43,7 @@ Finally, PropTypes were added to the projects, with the goal to type check all t
 
 A dark mode switch was also added for aesthethic purposes. Its switch was created using the React Switch lib.
 
-As for the tests, I don't have any hands on experience with it, so I read some articles and watched a few online courses and created some just so I wouldn't leave the project with zero testing. But I'm definitely interested in improving this skill.
+As for the tests, I don't have any hands on experience with it, so I left it without testing. But I'm definitely interested in improving this skill (I'm currently studying [this Udemy course](https://www.udemy.com/course/js-com-tdd-na-pratica)).
 
 
 ## 🎨 Palette
