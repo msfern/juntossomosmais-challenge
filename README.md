@@ -12,7 +12,7 @@
 
 ## 📙 Overview
 
-As per the [challenge description](https://github.com/juntossomosmais/frontend-challenge/blob/master/README.md), its goal was to turn a wireframe into code, adding improvements if necessary, besides developing the UI/UX for it ourselves. Some of the functionalities added to this application were:
+As per the [challenge description](https://github.com/juntossomosmais/frontend-challenge/blob/master/README.md), its goal was to turn an wireframe into code, adding improvements if necessary, besides developing the UI/UX for it ourselves. Some of the functionalities added to this application were:
 
 - **Live Search.** See the users you're searching for in real time.
 - **User Details.** Check additional information of every user inside their very own route.
@@ -29,6 +29,16 @@ First of all, a sketch was created, alongside the list of needs and improvements
 </p>
 
 When it came to coding, I realised the fetch from the API informed in the challenge description was not working, so I chose to download the file and leave it inside the project. This is being done by using the Axios lib.
+
+Afterwards, the search functionality was created, matching the search value with the user full name.
+
+Since every user's details had to be on an internal page, I used React Router to create this, switching between the **main page**, the **details page** and a **Not Found page** according to the URL path.
+
+For the sidebar filter, besides filtering, a Clear option was added in case the user wanted to see every other user (which wouldn't be the case since every user being displayed had the Trabalhoso region flag).
+
+As for the pagination, I coded it from scratch since it wouldn't be very complicated to do so.
+
+Finally, PropTypes were added to the projects, with the goal to type check all the props used in the application.
 
 
 ## 🎨 Palette
