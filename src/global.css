@@ -2,6 +2,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css');
 
 :root {
+  /* LIGHT MODE */
   --header: #878C8F;
   --background: #FCF7FF;
   --textColorDark: #0A090C;
@@ -11,7 +12,17 @@
   --blue: #38618C;
   --darkBlue: #1e4670;
   --gray: #666;
+  --darkGray: #414141;
   --lightGray: #ccc;
+
+  /* DARK MODE */
+  --darkBackground: #3a3a3a;
+  --textColorLight: #fdfdfd;
+  --purple: #5e2b6f;
+  --darkPurple: #501f61;
+  --blueAlt: #0f263e;
+  --darkBlueAlt: #091c2f;
+  --grayBackground: #4e4e4e;
 }
 
 * {
@@ -28,11 +39,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.2rem;
-  color: var(--textColorDark);
-}
-
-a {
-  color: var(--textColorDark);
 }
 
 ::selection {

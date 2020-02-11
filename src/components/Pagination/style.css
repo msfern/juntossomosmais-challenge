@@ -36,6 +36,21 @@
   margin-left: 10px;
 }
 
+.dark-mode .page-item button {
+  border: 1px solid var(--grayBackground);
+  background-color: var(--grayBackground);
+  color: white;
+}
+
+.dark-mode .page-item button.active {
+  background-color: var(--purple);
+  border: 1px solid var(--purple);
+}
+
+.dark-mode .page-item button.active {
+  background-color: var(--purple);
+}
+
 @media screen and (max-width: 775px) {
   .page-list {
     flex-wrap: wrap;

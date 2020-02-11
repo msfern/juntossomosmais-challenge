@@ -5,12 +5,12 @@ import UserCards from '../UserCards/index';
 import Pagination from '../Pagination/index';
 import './style.css';
 
-function Main({ currentUsers, filterUsers, clearFilter, loading, pageNumbers, changePage, currentPage }) {
+function Main({ currentUsers, filterUsers, clearFilter, loading, pageNumbers, setCurrentPage, currentPage }) {
   return (
     <div className='wrapper'>
       <FilterSideBar filterUsers={filterUsers} clearFilter={clearFilter} />
       <UserCards currentUsers={currentUsers} loading={loading} />
-      <Pagination pageNumbers={pageNumbers} changePage={changePage} currentPage={currentPage} />
+      <Pagination pageNumbers={pageNumbers} setCurrentPage={setCurrentPage} currentPage={currentPage} />
     </div>
   )
 }
@@ -21,6 +21,7 @@ Main.propTypes ={
   clearFilter: PropTypes.func,
   loading: PropTypes.bool,
   pageNumbers: PropTypes.array,
+  setCurrentPage: PropTypes.func,
   currentPage: PropTypes.number,
 }
 

@@ -17,6 +17,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [usersPerPage] = useState(15);
   const [pageNumbers, setPageNumbers] = useState([]);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const fetchAllUsers = async () => {
@@ -49,10 +50,6 @@ function App() {
     }
     calculatePageNumber();
   }, [filteredUsers, usersPerPage]);
-
-  function changePage(page) {
-    setCurrentPage(page);
-  }
 
   function addRegionPropertyToUser(user) {
     const latitude = user.location.coordinates.latitude;
@@ -121,10 +118,10 @@ function App() {
   }
 
   return (
-    <div className='App' >
-      <Header updateSearch={updateSearch} radioIsBeingUsed={radioIsBeingUsed} />
+    <div className={`App ${darkMode ? 'dark-mode' : ''}`} >
+      <Header updateSearch={updateSearch} radioIsBeingUsed={radioIsBeingUsed} darkMode={darkMode} setDarkMode={setDarkMode} />
       <Switch>
-        <Route exact path='/' render={() => <Main filteredUsers={filteredUsers} currentUsers={currentUsers} filterUsers={filterUsers} clearFilter={clearFilter} loading={loading} pageNumbers={pageNumbers} changePage={changePage} currentPage={currentPage} />} />
+        <Route exact path='/' render={() => <Main filteredUsers={filteredUsers} currentUsers={currentUsers} filterUsers={filterUsers} clearFilter={clearFilter} loading={loading} pageNumbers={pageNumbers} currentPage={currentPage} setCurrentPage={setCurrentPage} />} />
         <Route path="/users/:id" component={UserDetails}/>
         <Route path="/users/:id" component={UserDetails}/>
         <Route component={NotFound} />

@@ -6,8 +6,6 @@
   justify-content: center;
   padding: 20px 0;
   background-color: var(--header);
-  border-top-left-radius: 8%;
-  border-top-right-radius: 8%;
   box-shadow: 1px -3px 6px 1px rgba(0,0,0,.2);
 }
 
@@ -44,4 +42,13 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.dark-mode .footer .social-item {
+  background-color: var(--blueAlt);
+}
+
+.dark-mode .footer .social-item:hover {
+  background-color: var(--darkBlueAlt);
+
 }

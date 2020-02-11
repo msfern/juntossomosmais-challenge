@@ -11,6 +11,10 @@
   justify-content: center;
 }
 
+.dark-mode .wrapper {
+  background-color: var(--darkBackground);
+}
+
 @media screen and (max-width: 775px) {
   .wrapper {
     grid-template-areas: 

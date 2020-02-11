@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import './style.css';
 
-const Pagination = ({ pageNumbers, changePage, currentPage }) => {
+const Pagination = ({ pageNumbers, setCurrentPage, currentPage }) => {
   return (
     <nav className='pagination'>
       <ul className='page-list'>
         {pageNumbers.map(number => (
           <li key={number} className='page-item'>
-            <button onClick={() => changePage(number)} className={currentPage === number ? 'active' : ''}>{number}</button>
+            <button onClick={() => setCurrentPage(number)} className={currentPage === number ? 'active' : ''}>{number}</button>
           </li>
         ))}
       </ul>
@@ -18,7 +18,7 @@ const Pagination = ({ pageNumbers, changePage, currentPage }) => {
 
 Pagination.propTypes ={
   pageNumbers: PropTypes.array,
-  changePage: PropTypes.func,
+  setCurrentPage: PropTypes.func,
   currentPage: PropTypes.number,
 }
 

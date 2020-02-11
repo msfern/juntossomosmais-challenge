@@ -14,7 +14,7 @@ const UserCards = ({ currentUsers, loading }) => {
           <UserCard key={user} index={user} details={currentUsers[user]} />
         ))
         :
-        <p>Nenhum usuário corresponde à essa busca.</p>
+        <p className='no-results'>Nenhum usuário corresponde à essa busca.</p>
       }
     </div>
   )

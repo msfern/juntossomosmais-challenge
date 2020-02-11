@@ -20,7 +20,4 @@
   .header {
     flex-direction: column;
   }
-  .header img {
-    margin-bottom: 20px;
-  }
 }
