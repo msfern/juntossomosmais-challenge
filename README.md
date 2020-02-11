@@ -19,6 +19,7 @@ As per the [challenge description](https://github.com/juntossomosmais/frontend-c
 - **User Filter.** The sidebar filter displays only the users that fit the region filter selected.
 - **Pagination.** Displaying the users in groups of 15 increases the performance of the application.
 - **Responsive interface.** It's completely mobile friendly, so it works smoothly on every desktop, smartphone and tablet.
+- **Dark Mode.** Switching the theme to give your eyes a break.
 
 ## 🔨 Process
 
@@ -40,21 +41,26 @@ As for the pagination, I coded it from scratch since it wouldn't be very complic
 
 Finally, PropTypes were added to the projects, with the goal to type check all the props used in the application.
 
+A dark mode switch was also added for aesthethic purposes.
+
 
 ## 🎨 Palette
 
-| Color        | Hex           |
-| ------------- |:-------------:|
-| ![#f03c15](https://placehold.it/15/0A090C/000000?text=+) | #0A090C |
-| ![#f03c15](https://placehold.it/15/666666/000000?text=+) | #666666 |
-| ![#f03c15](https://placehold.it/15/878C8F/000000?text=+) | #878C8F |
-| ![#f03c15](https://placehold.it/15/CCCCCC/000000?text=+) | #CCCCCC |
-| ![#f03c15](https://placehold.it/15/FCF7FF/000000?text=+) | #FCF7FF |
+| Color                            | Hex                             | Color                            | Hex                             |                                                        
+| -------------                    |:-------------:                  | -------------                    |:-------------:                  |
+| ![#f03c15](https://placehold.it/15/0A090C/000000?text=+) | #0A090C | ![#f03c15](https://placehold.it/15/5E2B6F/000000?text=+) | #5E2B6F |
+| ![#f03c15](https://placehold.it/15/3a3a3a/000000?text=+) | #3A3A3A | ![#f03c15](https://placehold.it/15/501F61/000000?text=+) | #501F61 |
+| ![#f03c15](https://placehold.it/15/666666/000000?text=+) | #666666 | ![#f03c15](https://placehold.it/15/38618C/000000?text=+) | #38618C |
+| ![#f03c15](https://placehold.it/15/878C8F/000000?text=+) | #878C8F | ![#f03c15](https://placehold.it/15/1E4670/000000?text=+) | #1E4670 |
+| ![#f03c15](https://placehold.it/15/CCCCCC/000000?text=+) | #CCCCCC | ![#f03c15](https://placehold.it/15/0F263E/000000?text=+) | #0F263E |
+| ![#f03c15](https://placehold.it/15/FCF7FF/000000?text=+) | #FCF7FF | ![#f03c15](https://placehold.it/15/091C2F/000000?text=+) | #091C2F |
 | ![#f03c15](https://placehold.it/15/F9C80E/000000?text=+) | #F9C80E |
 | ![#f03c15](https://placehold.it/15/FF5964/000000?text=+) | #FF5964 |
 | ![#f03c15](https://placehold.it/15/E63743/000000?text=+) | #E63743 |
-| ![#f03c15](https://placehold.it/15/38618C/000000?text=+) | #38618C |
-| ![#f03c15](https://placehold.it/15/1E4670/000000?text=+) | #1E4670 |
+
+
+
+
 
 ## 💾 Getting Started
 To build and run this application locally, you'll need latest versions of Git and Node.

@@ -17,12 +17,12 @@
 
   /* DARK MODE */
   --darkBackground: #3a3a3a;
-  --textColorLight: #fdfdfd;
-  --purple: #5e2b6f;
-  --darkPurple: #501f61;
-  --blueAlt: #0f263e;
-  --darkBlueAlt: #091c2f;
-  --grayBackground: #4e4e4e;
+  --textColorLight: #FDFDFD;
+  --purple: #5E2B6F;
+  --darkPurple: #501F61;
+  --blueAlt: #0F263E;
+  --darkBlueAlt: #091C2F;
+  --grayBackground: #4E4E4E;
 }
 
 * {
